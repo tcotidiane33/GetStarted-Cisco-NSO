@@ -1,0 +1,10 @@
+vlans:
+  - id: 100
+    name: VENTES
+    devices:
+      - ex0
+      - ex1
+  - id: 200
+    name: INGES
+    devices:
+      - ex2

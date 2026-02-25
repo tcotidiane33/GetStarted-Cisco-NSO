@@ -1,0 +1,37 @@
+module simple-vlan {
+  yang-version 1.1;
+  namespace "http://example.com/simple-vlan";
+  prefix valid;
+
+  organization "NSO Bootcamp";
+  description "Un modèle YANG basique pour un service de VLAN simple.";
+
+  container vlan-service {
+    description "Le conteneur principal du service de VLANs.";
+
+    list vlan {
+      key "vlan-id";
+      description "Une liste de VLANs configurés par le service NSO.";
+
+      leaf vlan-id {
+        type uint16 {
+          range "1..4094";
+        }
+        description "L'identifiant 802.1Q du VLAN. Ne peut dépasser 4094.";
+      }
+
+      leaf name {
+        type string {
+          length "1..32";
+        }
+        mandatory true;
+        description "Le nom affiché du VLAN. Champ obligatoire.";
+      }
+
+      leaf-list devices {
+        type string;
+        description "Ceci simule un leafref vers /devices/device/name. Ici, on stocke juste les noms (ex: rtr-1).";
+      }
+    }
+  }
+}

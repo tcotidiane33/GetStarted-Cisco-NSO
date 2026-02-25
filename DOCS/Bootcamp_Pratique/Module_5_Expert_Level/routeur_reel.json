@@ -1,0 +1,10 @@
+{
+    "GigabitEthernet1": {
+        "ip_address": null,
+        "description": "LIEN_VERS_FW - CAUSE INCIDENT"
+    },
+    "Vlan100": {
+        "ip_address": "192.168.100.254",
+        "description": "PROD_VENTES"
+    }
+}
